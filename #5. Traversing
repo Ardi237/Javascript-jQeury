@@ -1,0 +1,214 @@
+A. Umum :
+1. Traversing dalan jQuery mengacu pada proses navigasi melalui elemen-elemen di dalam Document Object Model (DOM). 
+--------------------------------------------------------------------------
+2. jQuery menyediakan metode-metode untuk bergerak dari satu elemen ke elemen lain, baik dalam arah ke atas (ancestor), ke bawah (descendant), atau lateral (sibling).
+--------------------------------------------------------------------------
+3. Traversing sangat berguna ketika kita ingin menemukan elemen tertentu yang memiliki hubungan dengan elemen lain di dalam DOM, dan ini sering digunakan untuk memanipulasi atau memilih elemen dengan cara yang lebih spesifik.
+--------------------------------------------------------------------------
+
+
+
+
+
+B. Traversing ke Atas : (Ancestor Traversing) :
+*  Metode-metode ini digunakan untuk memilih elemen induk (parent) atau nenek moyang (ancestor) dari elemen yang dipilih.
+--------------------------------------------------------------------------
+1. parent() : Memilih elemen induk langsung dari elemen yang dipilih.
+<----
+$("p").parent(); // Memilih parent langsung dari setiap elemen <p>
+---->
+--------------------------------------------------------------------------
+2. parents() : Memilih semua elemen nenek moyang dari elemen yang dpilih hingga ke elemen root.
+<----
+$("p").parents(); // Memilih semua ancestor dari elemen <p>
+---->
+--------------------------------------------------------------------------
+3. closest() : Memilih elemen ancestor terdekat yang cocok dengan selector yang ditentukan.
+<----
+$("p").closest("div"); // Memilih elemen <div> terdekat yang mengandung <p>
+---->
+--------------------------------------------------------------------------
+
+
+
+
+C. Traversing Ke Bawah (Descendant Traversing) : 
+*  Metode-metode ini digunakan untuk memilih elemen anak (child) atau keturunan (descendant) dari elemen yang dipilih.
+--------------------------------------------------------------------------
+1. children() : Memilih elemen anak langsung dari elemen yang dipilih.
+<----
+$("div").children(); // Memilih semua anak langsung dari <div>
+---->
+--------------------------------------------------------------------------
+2. find() : Memilih semua elemen keturunan dari elemen yang dipilih.
+<----
+$("div").find("p"); // Memilih semua elemen <p> yang merupakan keturunan dari <div>
+---->
+--------------------------------------------------------------------------
+
+
+
+
+D. Traversing Antar Sibling (Sibling Traversing) : 
+*  Metode-metode ini digunakan untuk memilih elemen sibling (elemen yang berada pada level yang sama) dari elemen yang dipilih.
+--------------------------------------------------------------------------
+1. siblings() : Memilih semua sibling dari elemen yang dipilih.
+<----
+$("h1").siblings(); // Memilih semua sibling dari elemen <h1>
+---->
+--------------------------------------------------------------------------
+2. next() : Memilih elemen sibling berikutnya dari elemen yang dipilih.
+<----
+$("h1").next(); // Memilih elemen sibling tepat setelah <h1>
+---->
+--------------------------------------------------------------------------
+3. prev() : Memilih elemen sibling sebelumnya dari elemen yang dipilih.
+<----
+$("h1").prev(); // Memilih elemen sibling tepat sebelum <h1>
+---->
+--------------------------------------------------------------------------
+4. nextAll() : Memilih semua sibling berikutnya dari elemen yang dipilih.
+<----
+$("h1").nextAll(); // Memilih semua sibling setelah <h1>
+---->
+--------------------------------------------------------------------------
+5. prevAll() : Memilih semua sibling sebelumnya dari elemen yang dipilih.
+<----
+$("h1").prevAll(); // Memilih semua sibling sebelum <h1>
+---->
+--------------------------------------------------------------------------
+6. nextUntil() : Memilih semua sibling berikutnya dari elemen yang dipilih hingga elemen tertentu.
+<----
+$("h1").nextUntil("h3"); // Memilih semua sibling dari <h1> hingga <h3>
+---->
+--------------------------------------------------------------------------
+7. prevUntil() : Memilih semua sibling sebelumnya dari elemen yang dipilih hingga elemen tertentu.
+<----
+$("h3").prevUntil("h1"); // Memilih semua sibling dari <h3> hingga <h1>
+---->
+--------------------------------------------------------------------------
+
+
+
+
+
+E. Filter Traversing : 
+*  Metode-metode ini digunakan untuk menyaring elemen yang dipilih berdasarkan kondisi atau selector tertentu.
+--------------------------------------------------------------------------
+1. filter() : Menyaring elemen yang cocok dengan selector atau kondisi yang diberikan.
+<----
+$("p").filter(".highlight"); // Memilih elemen <p> yang memiliki class .highlight
+---->
+--------------------------------------------------------------------------
+2. not() : Menyaring elemen yang tidak cocok dengan selector atau kondisi yang diberikan.
+<----
+$("p").not(".highlight"); // Memilih elemen <p> yang tidak memiliki class .highlight
+---->
+--------------------------------------------------------------------------
+3. eq() : Memilih elemen berdasarkan indeks.
+<----
+$("li").eq(2); // Memilih elemen <li> ketiga (indeks dimulai dari 0)
+---->
+--------------------------------------------------------------------------
+4. first() : Memilih elemen pertama dari elemen yang dipilih.
+<----
+$("p").first(); // Memilih elemen <p> pertama
+---->
+--------------------------------------------------------------------------
+5. last() : Memilih elemen terakhir dari elemen yang dipilih.
+<----
+$("p").last(); // Memilih elemen <p> terakhir
+---->
+--------------------------------------------------------------------------
+
+
+
+
+F. Contoh Traversing dalam jQuery :
+// HTML :
+<div id="container">
+  <h1>Title</h1>
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <div>
+    <span>Nested element</span>
+  </div>
+</div>
+--------------------------------------------------------------------------
+//Traversing jQuery
+// Memilih elemen <p> pertama menggunakan .first()
+$("p").first().css("color", "red"); // Mengubah warna teks <p> pertama menjadi merah
+
+// Memilih sibling dari <h1>
+$("h1").siblings().css("font-weight", "bold"); // Mengubah semua sibling dari <h1> menjadi bold
+
+// Memilih parent dari <span>
+$("span").parent().css("border", "1px solid blue"); // Memberi border biru pada parent <span>
+
+// Memilih semua ancestor dari <span>
+$("span").parents().css("background-color", "lightgray"); // Mengubah background semua ancestor dari <span> menjadi abu-abu
+
+// Memilih semua keturunan dari <div>
+$("div").find("span").css("font-size", "20px"); // Mengubah ukuran font dari <span> keturunan <div>
+--------------------------------------------------------------------------
+
+
+
+
+G. Kesimpulan :
+1. Traversing dalam jQuery adalah cara yang sangat kuat dan fleksibel untuk menavigasi dan memanipulasi elemen-elemen di dalam DOM. 
+--------------------------------------------------------------------------
+2. Dengan berbagai metode traversing, Anda dapat bergerak ke atas, ke bawah, atau antar sibling dari elemen tertentu, serta melakukan filtering elemen sesuai kebutuhan. 
+--------------------------------------------------------------------------
+3. Traversing memudahkan pengembang untuk bekerja dengan elemen-elemen yang terkait dalam struktur DOM yang kompleks.
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
