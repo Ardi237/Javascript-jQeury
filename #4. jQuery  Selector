@@ -1,0 +1,196 @@
+A. Umum :
+1. jQuery Selector adalah fitur yang memungkinkan kita untuk memilih dan memanipulasi elemen HTML berdasarkan berbagai kriteria, seperti tag, class, ID, atribut, posisi dalam DOM, dan lainnya. 
+--------------------------------------------------------------------------
+2. Selector dalam jQuery didasarkan pada standar CSS selectors, tetapi jQuery juga memperluas kemampuan selector dengan fitur tambahan yang lebih fleksibel.
+--------------------------------------------------------------------------
+
+
+
+
+
+B. Jenis-jenis selector utama dalam jQuery :
+1. Selector Berdasarkan Tag : 
+*  Selector ini memilih semua elemen HTML dengan nama tag tertentu.
+<----
+$("p") // Memilih semua elemen <p>
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+2. Selector berdasarkan ID :
+*  Selector ini memilih elemen yang memiliki iD tertentu. Menggunakan simbo #.
+<----
+$("#myId") // Memilih elemen dengan id="myId"
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+3. Selector Berdasarkan Class :
+*  Selector ini memilih semua elemen yang memiliki class tertentu. Menggunakan simbol (`.`) .
+<----
+$(".myClass") // Memilih semua elemen dengan class="myClass"
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+4. Selector Gabungan (Multiple Selector)
+*  Kamu bisa menggabungkan beberapa selector untuk memilih lebih dari satu jenis elemen sekaligus.
+<----
+$("p, .myClass, #myId") // Memilih semua elemen <p>, class .myClass, dan id #myId
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+5. Selector berdasarkan Atribut :
+*  Selector ini memilih elemen berdasarkan nilai atribut tertentu.
+** Atribut tertentu : 
+  <----
+     $("input[name='email']") // Memilih elemen <input> yang memiliki atribut   name="email"
+  ---->
+** Attribut dengan nilai tertentu :
+   <----
+      $("a[href='https://example.com']") // Memilih elemen <a> dengan href="https://example.com"
+   ---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+6. Selector Pseudo-Class :
+*  Selector ini memilih elemen berdasarkan kondisi atau status tertentu, mirip dengan CSS pesudo-class.
+<----
+//First Child :
+$("p:first-child") // Memilih elemen <p> pertama dari parent-nya
+---->
+<----
+//Last Child :
+$("p:last-child") // Memilih elemen <p> terakhir dari parent-nya
+---->
+<----
+Nth Child :
+$("li:nth-child(3)") // Memilih elemen <li> ke-3 dalam list
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+7. Selector Berdasarkan konten :
+*  Selector ini memilih elemen yang memiliki konten teks tertentu.
+<----
+Contains Text :
+$("p:contains('hello')") // Memilih semua elemen <p> yang mengandung teks 'hello'
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+8. Selector Hierarki (Descendant and Child Selectors) : 
+*  Descendat Selector : Memilih elemen di dalam elemen lain (turunan tidak langsung).
+<----
+$("div p") // Memilih semua elemen <p> yang berada di dalam <div> (bisa jauh di dalam)
+---->
+----------------
+*  Child Selector : Memilih elemen yang merupakan child langsung dari elemen lain.
+<----
+$("div > p") // Memilih semua elemen <p> yang langsung berada dalam <div>
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+9. Selector berdasarkan posisi :
+*  Selector ini digunakan untuk memilih elemen berdasarkan posisi relatif di antara elemen-elemen sejenis.
+<----
+First : $("p:first") // Memilih elemen <p> pertama
+---->
+<----
+Last : $("p:last") // Memilih elemen <p> terakhir
+---->
+<----
+Nth-of-Type : $("p:nth-of-type(2)") // Memilih elemen <p> kedua dalam jenisnya
+---->
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+10. Selector Pseudo-Element : 
+*  jQuery tidak mendukung CSS pseudo-elements seperti ::before atau ::after secara langsung, tetapi kita bisa menambahkannya lewat jQuery dengan menggunakan manipulasi DOM.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+
+
+
+
+C. Contoh Penggunaan jQUery Selector :
+*  Contoh : ....
+// HTML :
+<----
+<div id="container">
+  <h1 class="title">Welcome</h1>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <a href="https://example.com">Example Link</a>
+</div>
+---->
+--------------------------------------------------------------------------
+// jQuery Selector :
+<----
+// Memilih elemen <h1> berdasarkan class
+$(".title").css("color", "red"); // Mengubah warna teks elemen <h1> menjadi merah
+
+// Memilih elemen <a> berdasarkan atribut href
+$("a[href='https://example.com']").css("font-size", "20px"); // Mengubah ukuran font elemen <a>
+
+// Memilih elemen <p> pertama
+$("p:first").text("This is the first paragraph"); // Mengubah teks elemen <p> pertama
+
+// Memilih elemen <p> kedua
+$("p:nth-child(3)").css("background-color", "yellow"); // Memberi background kuning pada elemen <p> kedua
+---->
+--------------------------------------------------------------------------
+
+
+
+D. Kesimpulan : 
+1. jQuery Selector menawarkan cara yang sangat fleksibel dan mudah digunakan untuk memilih elemen-elemen dalam DOM, dan seringkali lebih ringkas dan konsisten dibandingkan dengan native Javascript. 
+--------------------------------------------------------------------------
+2. Namun, dengan JavaScript modern (ES6+), banyak dari selector ini dapat dicapai melalui metode seperti document.querySelector atau document.querySelectorAll, yang mendukung sebagian besar fitur yang sama.
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
