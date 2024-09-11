@@ -1,0 +1,90 @@
+A. Umum : 
+1. jQuery adalah kumpulan fungsi-fungsi JavaScript yang memudahkan penulisan kode JavaScript.
+----------------------------------------------------------------------------
+2. jQuery mempunyai fitur seperti menyederhanakan document traversing, event handling, animating dan interaksi AJAX untuk pengembangan web secara cepat.
+----------------------------------------------------------------------------
+
+
+
+B. Manfaat jQuery :
+1. Menemukan elemen dalam dokumen HTML.
+----------------------------------------------------------------------------
+2. Mengubah konten HTML.
+----------------------------------------------------------------------------
+3. Mendengarkan apa yang dilakukan pengguna dan melakukan tindakan yang sesuai (event listener).
+----------------------------------------------------------------------------
+4. Membuat animasi konten di halaman/
+----------------------------------------------------------------------------
+5. Berbicara melalui jaringan untuk mengambil konten baru. (AJAX).
+----------------------------------------------------------------------------
+
+
+
+
+C. Cara menggunakan jQuery :
+1. Memuat link jQuery yang disediakan :
+<----
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+---->
+----------------------------------------------------------------------------
+2. menginstal file jquery.min.js : 
+<----
+   <script src="assets/js/jquery.min.js">
+        </script>
+---->
+----------------------------------------------------------------------------
+3. Karena JavaScript (dan jQuery) dapat berjalan sebelum DOM siap, maka kita jalankan (listen) kode jQuery jika dokumen (DOM) sudah siap (ready);
+<----
+$(document).ready(function(){
+    // kode jQuery
+});
+---->
+// Tambahkan script di atas pada bagian awal halaman, hal ini untuk mengantisipasi agar jQuery tidak diload terlebih dahulu sebelum halaman siap.
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
