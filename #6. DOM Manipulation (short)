@@ -1,0 +1,161 @@
+A. Umum : 
+1. DOM (Document Object Model) manipulation di jQuery merujuk pada cara jQuery memudahkan kita untuk mengakses dan mengubah elemen-elemen HTML, struktur, dan konten dalam sebuah halaman web secara dinamis. 
+-----------------------------------------------------------------------------
+2. jQuery menyediakan berbagai metode yang intuitif dan sederhana untuk melakukan hal ini.
+-----------------------------------------------------------------------------
+
+
+
+
+
+B. Memilih Elemen :
+1. Untuk memanipulasi elemen, pertama-tama kita harus memilihnya menggunakan jQuery selector.]
+<----
+// Memilih elemen berdasarkan tag
+$('p') // Memilih semua elemen <p>
+
+// Memilih elemen berdasarkan ID
+$('#myElement') // Memilih elemen dengan id "myElement"
+
+// Memilih elemen berdasarkan kelas
+$('.myClass') // Memilih semua elemen dengan kelas "myclass"
+---->
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+
+
+C. Mengubah Konten :
+*  text() : Mengambil atau mengubah teks di dalam elemen.
+<----
+$('#MyElement').text("Hello World");
+---->
+-----------------------------------------------------------------------------
+*  html() : Mengambil atau mengubah HTML di dalam elemen.
+<----
+$('#myElement').html(<b>Bold Text</b>)
+---->
+-----------------------------------------------------------------------------
+
+
+
+D. Mengubah Atribut : 
+*  attr() : Mengambil atau mengubah atribut HTML dari elemen.
+<----
+$('#myImage').attr('src', 'newimage.jpg'); // Mengubah atribut `src`
+---->
+-----------------------------------------------------------------------------
+
+
+
+E. Menambah atau menghapus elemen : 
+*  append() : Menambahkan elemen di dalam elemen yang dipilih, sebagai elemen terakhir.
+<----
+$('#myList').append('<li>Item Baru</li>'); // Menambah item di akhir list
+---->
+-----------------------------------------------------------------------------
+*  prepend() : Menambahkan elemen di dalam elemen yang dipilih, sebagai elemen pertama.
+<----
+$('#myList').prepend('<li>Item Awal</li>'); // menambah item di awal list
+---->
+-----------------------------------------------------------------------------
+*  remove() : Menghapus elemen yang dipilih.
+<----
+$(`#myElement`).css('color', 'red'); // Mengubah warna teks menjadi merah.
+---->
+-----------------------------------------------------------------------------
+
+
+
+F. Mengubah CSS : Mengambil atau mengubah properti CSS :
+*  css() : Mengmabil atau mengubah properti CSS.
+<----
+$('#myElement').css('color', 'red'); // Mengubah warna teks menjadi merah
+---->
+-----------------------------------------------------------------------------
+
+
+
+G. Menambah atau menghapus kelas CSS : 
+*  addClass() : Menambahkan keals CSS ke elemen.
+<----
+$('myElement').addClass('highlight'); // Menambah kelas 'highlight'
+---->
+-----------------------------------------------------------------------------
+*  removeCLass() : Menghapus kelas CSS dari elemen.
+<----
+$('#myElement').remove(`highlight`) // Menghapus keals `highlight` 
+---->
+-----------------------------------------------------------------------------
+
+
+
+H. Event Handling : 
+*  jQuery juga menyediakan cara mudah untuk menangani event seperti klik, hover, dsb.
+<----
+- click() : Menambahkan event klik.
+$('#myButton').click(function() {
+  alert('Button clicked!');
+});
+---->
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
