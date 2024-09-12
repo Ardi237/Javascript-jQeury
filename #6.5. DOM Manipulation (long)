@@ -1,0 +1,298 @@
+A. Add Function :
+1. .before(<elemen>) : Digunakan untuk menyisipkan konten tertentu sebelum elemen yang dipilih.
+** Penjelasan ** :
+<----
+<!DOCUMENT>
+    <li class="vacation">
+        <h2>Hawaii</h2>
+        <button>Get Price</button>
+    </li>
+---->
+----------------------------------------------------------
+*  Selain itu kita juga mempunyai sebuah elemen html misalnya <p>From $399.99</p>,
+kita bisa menyimpan elemen tersebut ke sebuah variabel terlebih dahulu.
+<----
+var price = $('</p>From $399.99</p>');
+---->
+----------------------------------------------------------
+*  SElanjutnya apabila kita ingin memasukkan elemen HTML <p>From $399.99</p> ke dalam DOM class vacation, kita bisa ketikkan kode berikut ini :
+<----
+$(document).ready(function() {
+  var price = $('<p>From $399.99</p>');
+  $('.vacation').before(price);
+});
+---->
+----------------------------------------------------------
+*   Karena pada kode di atas kita menggunakan before, maka DOM yang dihasilkan adalah sebagai berikut.
+<----
+<!DOCUMENT>
+    <p>$399.99</p>
+    <li class="vacation">
+        <h2>Hawaii</h2>
+        <button>Get Price</button>
+    </li>
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+2. `.after(<element>)` : 
+*  Digunakan untuk menyisipkan konten tertentu setelah elemen yang dipilih.
+<----
+$(document).ready(function() {
+  var price = $('<p>From $399.99</p>');
+  $('.vacation').after(price);
+});
+---->
+<----
+<----
+<!DOCUMENT>
+    <li class="vacation">
+        <h2>Hawaii</h2>
+        <button>Get Price</button>
+    </li>
+    <p>$399.99</p>
+// Elemen <p> terletak setelah <li>   
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+3. .append(<elemen>)
+Digunakan untuk menyisipkan konten tertentu di dalam elemen yang dipilih dan diletakkan di bagian akhir.
+<----
+$(document).ready(function() {
+  var price = $('<p>from $399.99</p>');
+  $('.vacation').append(price);
+});
+---->
+*  Metode append akan meletakkan price di dalam daftar list vacation dan diletakkan di bagian akhir.
+<----
+<!DOCUMENT>
+    <li class="vacation">
+        <h2>Hawaii</h2>
+        <button>Get Price</button>
+        <p>$399.99</p>
+    </li>
+----------------------------------------------------------
+----------------------------------------------------------
+4. `.prepend(<elemen>)` : 
+*  Digunakan untuk menyisipkan konten tertentu di dalam elemen yang dipilih dan dilektakkan di awal.
+<----
+$(document).ready(function() {
+  var price = $('<p>from $399.99</p>');
+  $('.vacation').prepend(price);
+});
+---->
+*  Metode prepend akan meletakkan price di dalam daftar list vacation dan diletakkan pada bagian awal.
+<----
+<!DOCUMENT>
+    <li class="vacation">
+        <p>$399.99</p>
+        <h2>Hawaii</h2>
+        <button>Get Price</button>
+    </li>
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+
+
+
+
+
+
+B. Alternative add functions :
+*  Fungsi sama seperti add hanya saja susunan pemakaiannya berbeda.
+----------------------------------------------------------
+----------------------------------------------------------
+1. `.insertBefore(<elemen>)` : 
+*  Fungsinya sama seperti before, digunakan untuk menyisipkan konten / elemen yang dipilih.  
+<----
+price.insertBefore($('.vacation'));
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+2. `.insertAfter(<elemen>)` :
+*  Fungsinya sama seperti after, digunakan untuk menyisipkan konten / elemen HTML setelah elemen yang dipilih.
+<----
+price.insertAfter($('.vacation'));
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+3. `prependTo(<elemen>)` :
+*  Fungsinya sama seperti prepend, digunakan untuk menyisipkan elemen HTML di awal elemen yang dipilih.
+<----
+price.prependTo($('.vacation'));
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+4. `.appendTo(<elemen>)` : 
+*  Fungsinya sama seperti append, digunakan untuk menyisipkan elemen HTML di akhir elemen yang dipilih.
+<----
+price.appendTo($('.vacation'));
+---->
+----------------------------------------------------------
+----------------------------------------------------------
+5. Contoh Penggunaan : 
+<----
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li>Jakarta</li>
+	<li>Surabaya</li>
+	<li>Malang</li>
+
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$((document).ready(function () {
+  var jogja = $(`<li>Yogyakarta</li>`);
+  var bali=$('<li>Bali</li>');
+  var subjudul=$('<h2>Pilih Tujuan Anda</h2>');
+  var penutup=$('<h3>Terima Kasih</h3>');
+  $('.lokasi').prepend(jogja);
+  $('.lokasi').append(bali);
+  $('.lokasi').before(subjudul);
+  $('.lokasi').after(penutup);
+});
+</script>
+---->
+-------------------------------------------------------------------------
+<----
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li>Jakarta</li>
+	<li>Surabaya</li>
+	<li>Malang</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+    var jogja=$('<li>Yogyakarta</li>');
+    var bali=$('<li>Bali</li>');
+    var subjudul=$('<h2>Pilih Tujuan Anda</h2>');
+    var penutup=$('<h3>Terima Kasih</h3>');
+	jogja.prependTo($('.lokasi'));
+	bali.appendto($('.lokasi'));	
+	subjudul.insertBefore($('.lokasi'));	
+	penutup.insertAfter($('.lokasi'));
+});
+---->
+-------------------------------------------------------------------------
+*  Ini adalah hasil dari DOM : 
+<----
+<!DOCUMENT>
+    <h1>Kemana Anda ingin pergi ?</h1>
+    <h2>Pilih Tujuan Anda</h2>  // before / insertBefore
+    <ul class="lokasi">
+      <li>Yogyakarta</li>  // prepend / prependTo
+    	<li>Bandung</li>
+    	<li>Jakarta</li>
+    	<li>Surabaya</li>
+    	<li>Malang</li>
+      <li>Bali</li>  // append / appendto
+    </ul>
+    <h3>Terima Kasih</h3>  // after / insertAfter
+---->
+-------------------------------------------------------------------------
+
+
+
+
+C. Get Function : 
+1. .text : 
+*  Mengembalikan konten teks dari elemen yang dipilih. Metode ini mengembalikan semua elemen yang cocok dan menghapus markup HTML.
+*  Contoh : 
+<----
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li class="surabaya">Surabaya</li>
+	<li>Jakarta</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function()
+{
+console.log($('.surabaya').text());
+});
+</script>
+---->
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+2. `.html` :
+Mengembalikan konten elemen yang dipilih (termasuk markup HTML).
+<----
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
+	<li>Jakarta</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+console.log($('.surabaya').html());
+});
+</script>
+---->
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+3. `.val` : 
+*  Mengembalikan value pada form.
+<----
+<h1>Kemana Anda ingin pergi ?</h1>
+<ul class="lokasi">
+	<li>Bandung</li>
+	<li class="surabaya"><strong>Surabaya</strong></li>
+	<li>Jakarta</li>
+	<li><input type="text" class="inputan" value="Malang"></li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+console.log($('.inputan').val());
+});
+</script>
+---->
+// Kode di atas megenmbalikkan value dari class="inputan".
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+
+
+
+
+D. set Function :
+1. `.text(konten)` : 
+Mengatur konten teks dari elemen yang dipilih.
+-------------------------------------------------------------------------
+2. `.html(konten)` :
+Mengatur konten elemen yang dipilih (markup HTML).
+-------------------------------------------------------------------------
+3. `.val(konten)` :
+Menetapkan atau mengembalikan value pada form.
+-------------------------------------------------------------------------
+4. Contoh :
+<----
+ $('.bandung').text('Cimahi');
+    $('.surabaya').html('<em>Surabaya</em>');
+    $('.inputan').val('Semarang');
+---->
+-------------------------------------------------------------------------
+
+
+
+
+E. Remove
+*  Digunakan untuk mengambil data di jQuery.
+-------------------------------------------------------------------------
+1. `.remove()` : Menghapus elemen dan elemen didalamnya (child)
+-------------------------------------------------------------------------
+2. `.empty()` : Menghapus elemen di dalamnya saja (child)
+-------------------------------------------------------------------------
+
+
+
+
