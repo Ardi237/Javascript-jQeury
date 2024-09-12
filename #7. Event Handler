@@ -1,0 +1,250 @@
+A. Umum :
+1. Event Handler adalah fungsi atau metode yang dijalankan ketika suatu event (peristiwa) terjadi pada halaman web.
+---------------------------------------------------------------
+2. Dalam konteks JavaScript, event handlers sering digunakan untuk merespons interaksi user, seperti klik mouse, ketikan keyboard, atau perubahan dalam elemen form. 
+---------------------------------------------------------------
+3. Event dapat diterapkan pada elemen HTML, dan ketika event tersebut terjadi, handler (fungsi) yang telah ditentukan akan dijalankan.
+---------------------------------------------------------------
+4. Penggunaan event handler di jQuery sangat ringkas dan efisien dibandingkan dengan JavaScript murni, sehingga membuat penulisan kode menjadi lebih mudah.
+---------------------------------------------------------------
+
+
+
+
+B. Mouse Event :
+*  Mouse events berkaitan dengan interaksi yang dilakukan oleh pengguna menggunakan mouse, seperti klik, hover, atau scroll. jQuery menyediakan berbagai methoed untuk menangani mouse events, antara lain :
+---------------------------------------------------------------
+1. click() : Event ini dijalankan ketika elemen diklik :
+<----
+$("#button").click(function() {
+  alert("Button clicked!");
+});
+---->
+---------------------------------------------------------------
+2. dbclick() : Event ini dijalankan ketika elemen diklik dua kali.
+<----
+$("#button")dbclick(function() {
+  alert("Button double-clicked");
+});
+---->
+---------------------------------------------------------------
+3. mouseenter() dan mouseleave() : Event ini terjadi ketika mouse masuk atau keluar dari area elemen.
+<----
+$("#box").mouseenter(function() {
+  $(this).css("background-color", "blue");
+}).mouseleave(fucntion() {
+  $(this).css("background-color", "white");
+});
+---------------------------------------------------------------
+4. mousedown() dan mouseup() : mousedown terjadi saat tombol mouse ditekan, sedangkan mouseup saat tombol dilepas.
+<----
+$("#button").mousedown(function() {
+    alert("Mouse button pressed down");
+});
+
+$("#button").mouseup(function() {
+    alert("Mouse button released");
+});
+---->
+---------------------------------------------------------------
+
+
+
+
+
+C. Keyboard Events :
+*  Keyboard events menangani input yang diberikan melalui keyboard. jQuery menyediakan beberapa handler yang dapat digunakan untuk menangkap aksi keyboard, seperti :
+---------------------------------------------------------------
+1. keydown() : Event ini dipicu ketika tombol pada keyboard ditekan.
+<----
+$(document).keydown(function(event) {
+    console.log("Key pressed: " + event.which);
+});
+---->
+---------------------------------------------------------------
+2. keyup() : Event ini dijalankan ketika tombol dilepaskan setelah ditekan.
+<----
+$(document).keydown(function(event) {
+    console.log("Key pressed: " + event.which);
+});
+---->
+---------------------------------------------------------------
+3. keypress() : Event ini dipicu saat tombol keyboard ditekan dan menghasilkan karakter. Namun, sekarang keypress() kurang digunakan dan lebih sering digantikan oleh keydown().
+<----
+$(document).keypress(function(event) {
+    console.log("Character pressed: " + String.fromCharCode(event.which));
+});
+---->
+---------------------------------------------------------------
+
+
+
+
+D. Form Events : 
+*  Form events digunakan untuk menangani perubahan dan interaksi yang dilakukan apda elemen form, seperti input, select, checkbox, dan lainnya.
+---------------------------------------------------------------
+1. submit() : Event ini dijalankan ketika form dikirimkan. Biasanya, kita menggunakan event.preventDefault() untuk mencegah pengiriman form secara default.
+<----
+$("#myForm").submit(function(event) {
+    event.preventDefault(); // Mencegah pengiriman form
+    alert("Form submitted!");
+});
+---->
+---------------------------------------------------------------
+2. change(): Event ini dijalankan ketika nilai elemen form berubah, seperti dropdown atau checkbox.
+<----
+$("#selectBox").change(function() {
+    alert("Selection changed to: " + $(this).val());
+});
+---->
+---------------------------------------------------------------
+3. focus() dan blur() : focus terjadi ketika elemen form mendapatkan fokus, sedangkan blur terjadi ketika elemen kehilangan fokus.
+<----
+$("#inputField").focus(function() {
+    $(this).css("background-color", "yellow");
+}).blur(function() {
+    $(this).css("background-color", "white");
+});
+---->
+---------------------------------------------------------------
+
+
+
+E. Document/Window Events : Event ini digunakan untuk menangani peristiwa yang terjadi pada level dokumen atau jendela (window). 
+*  Biasanya berkaitan dengan pemuatan, perubahan ukuran, atau scroll halaman.
+1. ready(): Event ini dijalankan ketika DOM sudah sepenuhnya dimuat, tapi sebelum semua resource seperti gambar selesai dimuat.
+<----
+$(document).ready(function() {
+    alert("Document is ready");
+});
+---->
+---------------------------------------------------------------
+2. resize() : Event ini dijalankan ketika ukuran jendela browser berubah.
+<----
+$(window).resize(function() {
+    console.log("Window resized to: " + $(window).width() + "x" + $(window).height());
+});
+---->
+---------------------------------------------------------------
+3. scroll() : Event ini dijalankan ketika halaman di-scroll oleh pengguna.
+<----
+$(window).scroll(function() {
+    console.log("Page scrolled to position: " + $(window).scrollTop());
+});
+---->
+---------------------------------------------------------------
+4. load(): Event ini dijalankan ketika seluruh halaman, termasuk gambar dan resource eksternal lainnya, selesai dimuat.
+<----
+$(window).load(function() {
+    alert("Page fully loaded!");
+});
+---->
+---------------------------------------------------------------
+
+
+
+
+F. Cara Alternatif Menangani Event : 
+1. Selain menggunakan method spesifik seperti click(), submit(), dan keydown(), jQuery juga memungkinkan penggunaan on() untuk mengelola berbagai jenis event dalam satu fungsi. Ini sering digunakan karena lebih fleksibel.
+<----
+$("#button").on("click mouseenter", function() {
+    alert("Button clicked or mouse entered!");
+});
+---->
+---------------------------------------------------------------
+
+
+
+
+G. Kesimpulan
+1. jQuery memudahkan penanganan event di web dengan menyediakan berbagai event handler yang ringkas dan fleksibel. 
+---------------------------------------------------------------
+2. Mulai dari mouse events, keyboard events, hingga form dan window events, jQuery menyediakan alat yang efisien untuk membangun interaktivitas yang dinamis di halaman web. 
+---------------------------------------------------------------
+3. Dengan jQuery, kode event handler dapat ditulis dengan lebih sederhana, meminimalkan penggunaan kode berulang, dan meningkatkan pemeliharaan kode secara keseluruhan.
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
