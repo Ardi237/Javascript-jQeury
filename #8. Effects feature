@@ -1,0 +1,150 @@
+A. Umum :
+1. Fitur effect di jQUery adalah kumpulan fungsi bawaan yang memungkinkan kita untuk membuat animasi dann efek visual pada elemen HTML dengan mudah. 
+-------------------------------------------------------------------------
+2. jQuery menyediakan berbagai efek yang siap diguanakn tanpa harus menulis kode animasi yang kompleks. 
+-------------------------------------------------------------------------
+3. Efek-efek ini bisa membantu dalam membuat interaksi pada halaman web menjadi lebih menarik dan dinamis.
+-------------------------------------------------------------------------
+
+
+
+
+B. show() dan hide() :
+-  show() : Menampilkan elemen yang disembunyikan.
+-  hide() : Menyembunyikan elemen.
+-  Kedua efek ini dapat digunakan dengan atau tanpa parameter waktu untuk mengatur durasi animasi.
+<----
+$("#element").hide();   // Sembunyikan elemen secara instan
+$("#element").show();   // Tampilkan elemen secara instan
+$("#element").hide(1000);  // Sembunyikan elemen dalam 1 detik
+$("#element").show(500);   // Tampilkan elemen dalam 0,5 detik
+---->
+------------------------------------------------------------------------
+
+
+
+
+C. toggle() : 
+1. toggle() adalah kombinasi dari show() dan hide(),. Jika elemen sedang ditampilkan, maka toggle() akan menyembunyikannya, dan sebaliknya.
+<----
+$("#element").toggle(1000);  // Menyembunyikan/menampilkan elemen dengan durasi 1 detik
+---->
+-----------------------------------------------------------------------
+
+
+
+
+D. fadeIn() dan fadeOut() :
+-  fadeIn() : Menampilkan elemen dengan efek pelan-pelan dari transparan menjadi penuh.
+-  fadeOut() : Menyembunyikan elemen deengan efek pelan-pelan dari penuh menja
+<----
+$("#element").fadeIn(2000);  // Tampilkan elemen dengan efek fade selama 2 detik
+$("#element").fadeOut(2000); // Sembunyikan elemen dengan efek fade selama 2 detik
+---->
+-----------------------------------------------------------------------
+
+
+
+
+E. `fadeToggle()` : 
+-  Efek ini serupa dengan fadeIn() dan fadeOut() : namun menggabungkannya. Jika elemen terlihat, maka akan fadeOut() dan jika tersembunyi akan fedaIn().
+<----
+$("#element").fadeToggle(1000) // Menampilkan atau menampilkan elemen dengan efek fade.
+-----------------------------------------------------------------------
+
+
+
+F. `fadeTo() : 
+-  fadeTo() : memungkinkan kita mengubah opacity elmeen ke nilai tertentu, dengan durasi yang diatur
+<----
+$("#element").fadeTo(1000, 0.5); // Mengubah opacity elemen menjadi 50% dalam 1 detik
+---->
+-----------------------------------------------------------------------
+
+
+
+G. slideUp() & slideDown() :
+-  slideUp() : Menyembunyikan elemen dengan efek slide ke atas.
+-  slideDown() : Menampilkan elemen dengan efek slide ke bawah.
+<----
+$("#element").slideUp(1000);   // Menyembunyikan elemen dengan slide ke atas dalam 1 detik
+$("#element").slideDown(1000); // Menampilkan elemen dengan slide ke bawah dalam 1 detik
+---->
+-----------------------------------------------------------------------
+
+
+
+H. slideToggle() : 
+-  Kombinasi dari slideUp() dan slideDown(). Jika elemen terlibat, maka akan slideUp(), dan jika tersembunyi, akan slideDown().
+<----
+$("#element").slideToggle(1000); // Menyembunyikan atau menampilkan elemen dengan efek slide
+---->
+-----------------------------------------------------------------------
+
+
+
+I. `animate()` : 
+-  aniamte() : fitur yang lebih fleksibel dan kompleks. Dengan animate(), kita bisa menguabh nilai CSS dari suatu elemen secara dinamis, seperti ukuran, posisi, atau opacity, menggunakan animasi.
+<----
+$("#box").animate({
+    width: "300px",
+    height: "300px",
+    opacity: 0.5
+}, 1000); // Animasi perubahan ukuran dan opacity dalam 1 detik
+---->
+//Kita juga bisa mengatur fungsi callback yang dipanggil setelah animasi selesai, atau mengatur beberapa efek animasi secara berurutan.
+-----------------------------------------------------------------------
+
+
+
+J. `stop()` : 
+-  stop() digunakan untuk menghentikan animasi yang sedang berlangsung. Ini berguna ketika kita tidak ingin animasi berjalan sepenuhnya.
+<----
+$("#element").st
+op();  // Menghentikan animasi yang sedang berjalan pada elemen
+---->
+-----------------------------------------------------------------------
+
+
+
+K. `delay()` : 
+-  Fungsi delay() digunakan untuk menunda pelaksanaan efek dalam jQuery. Ini berguna saat kita ingin menambahkan jeda antara efek.
+<----
+$("#element").slideUp(1000).delay(500).slideDown(1000);
+// Menyembunyikan elemen, menunggu 500ms, lalu menampilkannya kembali
+---->
+-----------------------------------------------------------------------
+
+
+
+L. `queue()` & `dequeue()` : 
+-  jQuery memiliki queue system untuk mengelola efek animasi yang berurutan. 
+-  `queue()` dan `dequeue()` digunakan untuk mengontrol animasi yang diproses satu per satu dalam urutana yang ditentukan.
+<----
+$("#element").queue(function(next) {
+  $(this).css("background-color", "red");
+  next(); //Panggil next untuk melanjutkan ke efek berikutnya dalam antrean.
+});
+---->
+-----------------------------------------------------------------------
+
+
+
+M. Kesimpulan :
+-  Fitur effects di jQUery memberi kita kemampuan untuk membuat animasi dan transisi yang menarik dengan cara yang sederhana. Dari efek sederhana seperti show() dan hide(), hingga animasi yang lebih kompleks menggunakan animate().
+-----------------------------------------------------------------------
+-  jQuery() memudahkan kita untuk meningkatkan interkativitas di halaman web. Efek-efek ini bisa dikombinasikan dengan callback dan queue untuk menciptakan pengalaman pengguna yang lebih menarik dan responsif.
+-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
